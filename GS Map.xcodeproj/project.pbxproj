@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3624F501C3F18A10047ECCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F4F1C3F18A10047ECCB /* main.m */; };
+		A3624F531C3F18A10047ECCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F521C3F18A10047ECCB /* AppDelegate.m */; };
+		A3624F551C3F18A10047ECCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3624F541C3F18A10047ECCB /* Assets.xcassets */; };
+		A3624F581C3F18A10047ECCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3624F561C3F18A10047ECCB /* LaunchScreen.storyboard */; };
+		A3624F611C3F192B0047ECCB /* GSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F601C3F192B0047ECCB /* GSMapViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A3624F4B1C3F18A10047ECCB /* GS Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GS Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3624F4F1C3F18A10047ECCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A3624F511C3F18A10047ECCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A3624F521C3F18A10047ECCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A3624F541C3F18A10047ECCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3624F571C3F18A10047ECCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3624F591C3F18A10047ECCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3624F5F1C3F192B0047ECCB /* GSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GSMapViewController.h; path = ../GSMapViewController.h; sourceTree = "<group>"; };
+		A3624F601C3F192B0047ECCB /* GSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSMapViewController.m; path = ../GSMapViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3624F481C3F18A10047ECCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3624F421C3F18A10047ECCB = {
+			isa = PBXGroup;
+			children = (
+				A3624F4D1C3F18A10047ECCB /* GS Map */,
+				A3624F4C1C3F18A10047ECCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3624F4C1C3F18A10047ECCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3624F4B1C3F18A10047ECCB /* GS Map.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3624F4D1C3F18A10047ECCB /* GS Map */ = {
+			isa = PBXGroup;
+			children = (
+				A3624F621C3F19330047ECCB /* Screens */,
+				A3624F511C3F18A10047ECCB /* AppDelegate.h */,
+				A3624F521C3F18A10047ECCB /* AppDelegate.m */,
+				A3624F541C3F18A10047ECCB /* Assets.xcassets */,
+				A3624F561C3F18A10047ECCB /* LaunchScreen.storyboard */,
+				A3624F591C3F18A10047ECCB /* Info.plist */,
+				A3624F4E1C3F18A10047ECCB /* Supporting Files */,
+			);
+			path = "GS Map";
+			sourceTree = "<group>";
+		};
+		A3624F4E1C3F18A10047ECCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A3624F4F1C3F18A10047ECCB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3624F621C3F19330047ECCB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A3624F5F1C3F192B0047ECCB /* GSMapViewController.h */,
+				A3624F601C3F192B0047ECCB /* GSMapViewController.m */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3624F4A1C3F18A10047ECCB /* GS Map */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3624F5C1C3F18A10047ECCB /* Build configuration list for PBXNativeTarget "GS Map" */;
+			buildPhases = (
+				A3624F471C3F18A10047ECCB /* Sources */,
+				A3624F481C3F18A10047ECCB /* Frameworks */,
+				A3624F491C3F18A10047ECCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GS Map";
+			productName = "GS Map";
+			productReference = A3624F4B1C3F18A10047ECCB /* GS Map.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3624F431C3F18A10047ECCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Luke sammut";
+				TargetAttributes = {
+					A3624F4A1C3F18A10047ECCB = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = A3624F461C3F18A10047ECCB /* Build configuration list for PBXProject "GS Map" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3624F421C3F18A10047ECCB;
+			productRefGroup = A3624F4C1C3F18A10047ECCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3624F4A1C3F18A10047ECCB /* GS Map */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3624F491C3F18A10047ECCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3624F551C3F18A10047ECCB /* Assets.xcassets in Resources */,
+				A3624F581C3F18A10047ECCB /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3624F471C3F18A10047ECCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3624F531C3F18A10047ECCB /* AppDelegate.m in Sources */,
+				A3624F611C3F192B0047ECCB /* GSMapViewController.m in Sources */,
+				A3624F501C3F18A10047ECCB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A3624F561C3F18A10047ECCB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3624F571C3F18A10047ECCB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3624F5A1C3F18A10047ECCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A3624F5B1C3F18A10047ECCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3624F5D1C3F18A10047ECCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "GS Map/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sammut.GS-Map";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A3624F5E1C3F18A10047ECCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "GS Map/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "sammut.GS-Map";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3624F461C3F18A10047ECCB /* Build configuration list for PBXProject "GS Map" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3624F5A1C3F18A10047ECCB /* Debug */,
+				A3624F5B1C3F18A10047ECCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3624F5C1C3F18A10047ECCB /* Build configuration list for PBXNativeTarget "GS Map" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3624F5D1C3F18A10047ECCB /* Debug */,
+				A3624F5E1C3F18A10047ECCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3624F431C3F18A10047ECCB /* Project object */;
+}
