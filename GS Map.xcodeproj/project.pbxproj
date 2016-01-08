@@ -14,6 +14,9 @@
 		A3624F611C3F192B0047ECCB /* GSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F601C3F192B0047ECCB /* GSMapViewController.m */; };
 		A3624F681C3F20E70047ECCB /* GSMapLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F671C3F20E70047ECCB /* GSMapLocationManager.m */; };
 		A3624F6C1C3F3C890047ECCB /* GSMapPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F6B1C3F3C890047ECCB /* GSMapPointAnnotation.m */; };
+		A3624F761C3F59CB0047ECCB /* GSMapPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F751C3F59CB0047ECCB /* GSMapPinAnnotationView.m */; };
+		A3624F791C3F5A700047ECCB /* GSMapCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F781C3F5A700047ECCB /* GSMapCalloutView.m */; };
+		A3B2FC9A1C3F815000DDCC34 /* PhoneDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B2FC991C3F815000DDCC34 /* PhoneDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,12 @@
 		A3624F671C3F20E70047ECCB /* GSMapLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMapLocationManager.m; sourceTree = "<group>"; };
 		A3624F6A1C3F3C890047ECCB /* GSMapPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMapPointAnnotation.h; sourceTree = "<group>"; };
 		A3624F6B1C3F3C890047ECCB /* GSMapPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMapPointAnnotation.m; sourceTree = "<group>"; };
+		A3624F741C3F59CB0047ECCB /* GSMapPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMapPinAnnotationView.h; sourceTree = "<group>"; };
+		A3624F751C3F59CB0047ECCB /* GSMapPinAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMapPinAnnotationView.m; sourceTree = "<group>"; };
+		A3624F771C3F5A700047ECCB /* GSMapCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMapCalloutView.h; sourceTree = "<group>"; };
+		A3624F781C3F5A700047ECCB /* GSMapCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMapCalloutView.m; sourceTree = "<group>"; };
+		A3B2FC981C3F815000DDCC34 /* PhoneDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneDetailsViewController.h; sourceTree = "<group>"; };
+		A3B2FC991C3F815000DDCC34 /* PhoneDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +71,12 @@
 		A3624F4D1C3F18A10047ECCB /* GS Map */ = {
 			isa = PBXGroup;
 			children = (
+				A3624F7A1C3F5A7A0047ECCB /* Views */,
 				A3624F691C3F20F00047ECCB /* Utilities */,
 				A3624F621C3F19330047ECCB /* Screens */,
 				A3624F511C3F18A10047ECCB /* AppDelegate.h */,
 				A3624F521C3F18A10047ECCB /* AppDelegate.m */,
+				A3624F701C3F46BA0047ECCB /* Custom Annotation View */,
 				A3624F541C3F18A10047ECCB /* Assets.xcassets */,
 				A3624F561C3F18A10047ECCB /* LaunchScreen.storyboard */,
 				A3624F591C3F18A10047ECCB /* Info.plist */,
@@ -87,6 +98,8 @@
 			children = (
 				A3624F5F1C3F192B0047ECCB /* GSMapViewController.h */,
 				A3624F601C3F192B0047ECCB /* GSMapViewController.m */,
+				A3B2FC981C3F815000DDCC34 /* PhoneDetailsViewController.h */,
+				A3B2FC991C3F815000DDCC34 /* PhoneDetailsViewController.m */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -100,6 +113,25 @@
 				A3624F6B1C3F3C890047ECCB /* GSMapPointAnnotation.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		A3624F701C3F46BA0047ECCB /* Custom Annotation View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom Annotation View";
+			sourceTree = "<group>";
+		};
+		A3624F7A1C3F5A7A0047ECCB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3624F771C3F5A700047ECCB /* GSMapCalloutView.h */,
+				A3624F781C3F5A700047ECCB /* GSMapCalloutView.m */,
+				A3624F741C3F59CB0047ECCB /* GSMapPinAnnotationView.h */,
+				A3624F751C3F59CB0047ECCB /* GSMapPinAnnotationView.m */,
+			);
+			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +205,12 @@
 			files = (
 				A3624F681C3F20E70047ECCB /* GSMapLocationManager.m in Sources */,
 				A3624F531C3F18A10047ECCB /* AppDelegate.m in Sources */,
+				A3624F761C3F59CB0047ECCB /* GSMapPinAnnotationView.m in Sources */,
 				A3624F611C3F192B0047ECCB /* GSMapViewController.m in Sources */,
 				A3624F501C3F18A10047ECCB /* main.m in Sources */,
 				A3624F6C1C3F3C890047ECCB /* GSMapPointAnnotation.m in Sources */,
+				A3B2FC9A1C3F815000DDCC34 /* PhoneDetailsViewController.m in Sources */,
+				A3624F791C3F5A700047ECCB /* GSMapCalloutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

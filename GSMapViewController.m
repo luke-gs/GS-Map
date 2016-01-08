@@ -10,7 +10,9 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "GSMapPointAnnotation.h"
+#import "PhoneDetailsViewController.h"
 #import "GSMapLocationManager.h"
+#import "GSMapPinAnnotationView.h"
 
 @interface GSMapViewController () <MKMapViewDelegate>
 
@@ -29,6 +31,31 @@
     
     // Set up the view and constraints
     [self setupViews];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (!self.mapView.superview) {
+        [self.view addSubview:self.mapView];
+        
+        [self.view sendSubviewToBack:self.mapView];
+        
+        
+        //----------------------------------------------------
+        //                     Constraints
+        //----------------------------------------------------
+        
+        [NSLayoutConstraint activateConstraints:@[
+                                                  
+          // Map view constraints
+          [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+          [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0],
+          [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+          [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
+          ]];
+
+    }
 }
 
 #pragma mark - Set up views
@@ -89,24 +116,24 @@
     
     // This checks whether there is an existing GSMapAnnotation on the map already
     // If there is then it won't add a new one, but if there isn't then it will add a new annotation
-    if([[self.mapView annotations] count]>0 )
-    {
-        for (GSMapPointAnnotation *storedAnnotation in [self.mapView annotations]) {
-            
-            //make sure the annotations are the type of GS Map  Annotation
-            if([storedAnnotation isKindOfClass:[GSMapPointAnnotation class]])
-            {
-                CLLocation *oldLocation = [[CLLocation alloc]initWithLatitude:storedAnnotation.coordinate.latitude longitude:storedAnnotation.coordinate.longitude];
-                
-                // Compare the two values of locations
-                if([newLocation distanceFromLocation:oldLocation] < 10)
-                {
-                    existingAnnotation = YES;
-                    break;
-                }
-            }
-        }
-    }
+//    if([[self.mapView annotations] count]>0 )
+//    {
+//        for (GSMapPointAnnotation *storedAnnotation in [self.mapView annotations]) {
+//            
+//            //make sure the annotations are the type of GS Map  Annotation
+//            if([storedAnnotation isKindOfClass:[GSMapPointAnnotation class]])
+//            {
+//                CLLocation *oldLocation = [[CLLocation alloc]initWithLatitude:storedAnnotation.coordinate.latitude longitude:storedAnnotation.coordinate.longitude];
+//                
+//                // Compare the two values of locations
+//                if([newLocation distanceFromLocation:oldLocation] < 10)
+//                {
+//                    existingAnnotation = YES;
+//                    break;
+//                }
+//            }
+//        }
+//    }
     
     // If there is no existig annotation then it will add a new one
     if(!existingAnnotation)
@@ -114,8 +141,9 @@
         
         [self.locationManager reverseGeocode:newLocation withCompletionHandler:^(NSString *address, NSError *error) {
             annotation.subtitle = address;
+            [self.mapView addAnnotation: annotation];
         }];
-        [self.mapView addAnnotation: annotation];
+
     }
 
 }
@@ -135,20 +163,29 @@
         return nil;
     }
     
-    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"loc"];
-    annotationView.canShowCallout = YES;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    GSMapPinAnnotationView *annotationView = [[GSMapPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    [annotationView addCalloutAction:^{
+        [self showPhoneDetails];
+    }];
+
     
     return annotationView;
 }
 
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    
-}
 
 -(void) refreshMapView
 {
     [self.mapView showsUserLocation];
 }
+
+#pragma mark - Navigation
+
+-(void) showPhoneDetails
+{
+    PhoneDetailsViewController *phoneDetailsVC = [[PhoneDetailsViewController alloc]initWithMapView:self.mapView];
+    [self.navigationController pushViewController:phoneDetailsVC animated:YES];
+    NSLog(@"kjgsgs");
+}
+
+
 @end
