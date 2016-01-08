@@ -28,6 +28,9 @@
     //Navigation controller
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:gSMapVC];
     
+    //sets the navigation Controller to a dark theme
+    navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
     self.window.rootViewController = navigationController;
     
     return YES;
