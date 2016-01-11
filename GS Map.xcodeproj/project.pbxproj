@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DBFE0A96ABB39E8B01ADD60 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 540C86C38DC0C10B4CA6D73D /* libPods.a */; };
+		A3464E481C3FA5370014047E /* GSPhoneModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3464E461C3FA5370014047E /* GSPhoneModel.xcdatamodeld */; };
+		A3464E4D1C3FA57C0014047E /* Phone+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A3464E4A1C3FA57C0014047E /* Phone+CoreDataProperties.m */; };
+		A3464E4E1C3FA57C0014047E /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = A3464E4C1C3FA57C0014047E /* Phone.m */; };
 		A3624F501C3F18A10047ECCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F4F1C3F18A10047ECCB /* main.m */; };
 		A3624F531C3F18A10047ECCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F521C3F18A10047ECCB /* AppDelegate.m */; };
 		A3624F551C3F18A10047ECCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3624F541C3F18A10047ECCB /* Assets.xcassets */; };
@@ -17,9 +21,18 @@
 		A3624F761C3F59CB0047ECCB /* GSMapPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F751C3F59CB0047ECCB /* GSMapPinAnnotationView.m */; };
 		A3624F791C3F5A700047ECCB /* GSMapCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3624F781C3F5A700047ECCB /* GSMapCalloutView.m */; };
 		A3B2FC9A1C3F815000DDCC34 /* PhoneDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B2FC991C3F815000DDCC34 /* PhoneDetailsViewController.m */; };
+		A3BABB941C431A1B006196BC /* Phone+Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BABB931C431A1B006196BC /* Phone+Extended.m */; };
+		A3BABB971C434BE1006196BC /* PhoneParseUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BABB961C434BE1006196BC /* PhoneParseUtility.m */; };
+		A3EA69361C426BD7008A1BB1 /* PhoneDataUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EA69351C426BD7008A1BB1 /* PhoneDataUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540C86C38DC0C10B4CA6D73D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3464E471C3FA5370014047E /* GSPhoneModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GSPhoneModel.xcdatamodel; sourceTree = "<group>"; };
+		A3464E491C3FA57C0014047E /* Phone+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Phone+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A3464E4A1C3FA57C0014047E /* Phone+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Phone+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A3464E4B1C3FA57C0014047E /* Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
+		A3464E4C1C3FA57C0014047E /* Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
 		A3624F4B1C3F18A10047ECCB /* GS Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GS Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3624F4F1C3F18A10047ECCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A3624F511C3F18A10047ECCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +52,14 @@
 		A3624F781C3F5A700047ECCB /* GSMapCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSMapCalloutView.m; sourceTree = "<group>"; };
 		A3B2FC981C3F815000DDCC34 /* PhoneDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneDetailsViewController.h; sourceTree = "<group>"; };
 		A3B2FC991C3F815000DDCC34 /* PhoneDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneDetailsViewController.m; sourceTree = "<group>"; };
+		A3BABB921C431A1B006196BC /* Phone+Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Phone+Extended.h"; sourceTree = "<group>"; };
+		A3BABB931C431A1B006196BC /* Phone+Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Phone+Extended.m"; sourceTree = "<group>"; };
+		A3BABB951C434BE1006196BC /* PhoneParseUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneParseUtility.h; sourceTree = "<group>"; };
+		A3BABB961C434BE1006196BC /* PhoneParseUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneParseUtility.m; sourceTree = "<group>"; };
+		A3EA69341C426BD7008A1BB1 /* PhoneDataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneDataUtility.h; sourceTree = "<group>"; };
+		A3EA69351C426BD7008A1BB1 /* PhoneDataUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneDataUtility.m; sourceTree = "<group>"; };
+		E3B061BA7BADCBBEC5A1C774 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FE018FAB4ADBEA85F9A855D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,17 +67,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DBFE0A96ABB39E8B01ADD60 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CAA82A469E718665CE0376C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				540C86C38DC0C10B4CA6D73D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		150B89B547771F0E590E14D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE018FAB4ADBEA85F9A855D6 /* Pods.debug.xcconfig */,
+				E3B061BA7BADCBBEC5A1C774 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A3464E451C3FA5220014047E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3464E491C3FA57C0014047E /* Phone+CoreDataProperties.h */,
+				A3464E4A1C3FA57C0014047E /* Phone+CoreDataProperties.m */,
+				A3464E4B1C3FA57C0014047E /* Phone.h */,
+				A3464E4C1C3FA57C0014047E /* Phone.m */,
+				A3BABB921C431A1B006196BC /* Phone+Extended.h */,
+				A3BABB931C431A1B006196BC /* Phone+Extended.m */,
+				A3464E461C3FA5370014047E /* GSPhoneModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A3464E4F1C40CFD40014047E /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+				A3624F5F1C3F192B0047ECCB /* GSMapViewController.h */,
+				A3624F601C3F192B0047ECCB /* GSMapViewController.m */,
+			);
+			name = "Map View";
+			sourceTree = "<group>";
+		};
+		A3464E501C40CFDC0014047E /* Phone Details */ = {
+			isa = PBXGroup;
+			children = (
+				A3B2FC981C3F815000DDCC34 /* PhoneDetailsViewController.h */,
+				A3B2FC991C3F815000DDCC34 /* PhoneDetailsViewController.m */,
+			);
+			name = "Phone Details";
+			sourceTree = "<group>";
+		};
 		A3624F421C3F18A10047ECCB = {
 			isa = PBXGroup;
 			children = (
 				A3624F4D1C3F18A10047ECCB /* GS Map */,
 				A3624F4C1C3F18A10047ECCB /* Products */,
+				150B89B547771F0E590E14D4 /* Pods */,
+				0CAA82A469E718665CE0376C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +144,7 @@
 		A3624F4D1C3F18A10047ECCB /* GS Map */ = {
 			isa = PBXGroup;
 			children = (
+				A3464E451C3FA5220014047E /* Model */,
 				A3624F7A1C3F5A7A0047ECCB /* Views */,
 				A3624F691C3F20F00047ECCB /* Utilities */,
 				A3624F621C3F19330047ECCB /* Screens */,
@@ -96,10 +170,8 @@
 		A3624F621C3F19330047ECCB /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A3624F5F1C3F192B0047ECCB /* GSMapViewController.h */,
-				A3624F601C3F192B0047ECCB /* GSMapViewController.m */,
-				A3B2FC981C3F815000DDCC34 /* PhoneDetailsViewController.h */,
-				A3B2FC991C3F815000DDCC34 /* PhoneDetailsViewController.m */,
+				A3464E4F1C40CFD40014047E /* Map View */,
+				A3464E501C40CFDC0014047E /* Phone Details */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -107,6 +179,10 @@
 		A3624F691C3F20F00047ECCB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A3BABB951C434BE1006196BC /* PhoneParseUtility.h */,
+				A3BABB961C434BE1006196BC /* PhoneParseUtility.m */,
+				A3EA69341C426BD7008A1BB1 /* PhoneDataUtility.h */,
+				A3EA69351C426BD7008A1BB1 /* PhoneDataUtility.m */,
 				A3624F661C3F20E70047ECCB /* GSMapLocationManager.h */,
 				A3624F671C3F20E70047ECCB /* GSMapLocationManager.m */,
 				A3624F6A1C3F3C890047ECCB /* GSMapPointAnnotation.h */,
@@ -141,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3624F5C1C3F18A10047ECCB /* Build configuration list for PBXNativeTarget "GS Map" */;
 			buildPhases = (
+				DC3156A520E0CC79439D1B98 /* Check Pods Manifest.lock */,
 				A3624F471C3F18A10047ECCB /* Sources */,
 				A3624F481C3F18A10047ECCB /* Frameworks */,
 				A3624F491C3F18A10047ECCB /* Resources */,
+				B3D2B11F96AC7374300A512E /* Embed Pods Frameworks */,
+				12EEEB3E11EE8BED8D4EFFF5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,17 +277,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12EEEB3E11EE8BED8D4EFFF5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3D2B11F96AC7374300A512E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC3156A520E0CC79439D1B98 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A3624F471C3F18A10047ECCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A3624F681C3F20E70047ECCB /* GSMapLocationManager.m in Sources */,
+				A3464E4E1C3FA57C0014047E /* Phone.m in Sources */,
 				A3624F531C3F18A10047ECCB /* AppDelegate.m in Sources */,
+				A3BABB971C434BE1006196BC /* PhoneParseUtility.m in Sources */,
+				A3464E4D1C3FA57C0014047E /* Phone+CoreDataProperties.m in Sources */,
+				A3BABB941C431A1B006196BC /* Phone+Extended.m in Sources */,
 				A3624F761C3F59CB0047ECCB /* GSMapPinAnnotationView.m in Sources */,
 				A3624F611C3F192B0047ECCB /* GSMapViewController.m in Sources */,
 				A3624F501C3F18A10047ECCB /* main.m in Sources */,
 				A3624F6C1C3F3C890047ECCB /* GSMapPointAnnotation.m in Sources */,
+				A3464E481C3FA5370014047E /* GSPhoneModel.xcdatamodeld in Sources */,
+				A3EA69361C426BD7008A1BB1 /* PhoneDataUtility.m in Sources */,
 				A3B2FC9A1C3F815000DDCC34 /* PhoneDetailsViewController.m in Sources */,
 				A3624F791C3F5A700047ECCB /* GSMapCalloutView.m in Sources */,
 			);
@@ -310,6 +443,7 @@
 		};
 		A3624F5D1C3F18A10047ECCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE018FAB4ADBEA85F9A855D6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "GS Map/Info.plist";
@@ -321,6 +455,7 @@
 		};
 		A3624F5E1C3F18A10047ECCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3B061BA7BADCBBEC5A1C774 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "GS Map/Info.plist";
@@ -352,6 +487,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A3464E461C3FA5370014047E /* GSPhoneModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A3464E471C3FA5370014047E /* GSPhoneModel.xcdatamodel */,
+			);
+			currentVersion = A3464E471C3FA5370014047E /* GSPhoneModel.xcdatamodel */;
+			path = GSPhoneModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A3624F431C3F18A10047ECCB /* Project object */;
 }

@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface GSMapLocationManager : NSObject
+@interface GSMapLocationManager : CLLocationManager
 
 + (instancetype)sharedManager;
 
 // Returns the users current location
 -(CLLocation*) currentLocation;
 
--(void) reverseGeocode:(CLLocation*) location withCompletionHandler:(void (^) (NSString *address, NSError *error)) completionHandler;
+-(void) reverseGeocodeWithCompletionHandler:(void (^) (NSString *address, NSError *error)) completionHandler;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "GSMapViewController.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -22,6 +24,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    // Initialize Parse.
+    [Parse setApplicationId:@"xAaMpBIS0tIzz7WQdrKdAkq3y1IQLSFqzFxCutfP"
+                  clientKey:@"Q41OLIOws2TePVIMlu6oKD3XTIp0MsHnDoHWHdsV"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     //GS Map View Controller
     GSMapViewController *gSMapVC = [[GSMapViewController alloc]init];
     
@@ -32,6 +41,8 @@
     navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     self.window.rootViewController = navigationController;
+    
+    [MagicalRecord setupCoreDataStack];
     
     return YES;
 }

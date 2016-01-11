@@ -7,11 +7,13 @@
 //
 
 #import "PhoneDetailsViewController.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "PhoneDataUtility.h"
+#import "PhoneParseUtility.h"
 
 @interface PhoneDetailsViewController ()
 
 @property (strong,nonatomic) MKMapView* mapView;
-
 @property (strong,nonatomic) UILabel *foundLabel;
 @property (strong, nonatomic) UISwitch *foundSwitch;
 
@@ -47,6 +49,34 @@
     return self;
 }
 
+#pragma mark - Helper Methods
+
+-(IBAction)switchChanged:(id)sender
+{
+    UISwitch *switchButton = (UISwitch*) sender;
+    [self updatePhoneMissingInformation:switchButton.on];
+}
+
+// If the user switches the phone to found, update the information in the core data
+-(void) updatePhoneMissingInformation:(BOOL) found
+{
+    if(!found)
+    {
+        self.phone.found = @0;
+        self.foundLabel.text = @"Missing";
+    }else{
+        self.phone.found = @1;
+        self.foundLabel.text = @"Found";
+    }
+    
+    __weak PhoneDetailsViewController *weakSelf = self;
+    [PhoneParseUtility updatePhoneForFound:self.phone withFound:found withCompletion:^{
+        [PhoneDataUtility updatePhoneWhenFound:weakSelf.phone forFoundBool:found withCompletion:^{
+
+        }];
+    }];
+}
+
 #pragma mark - Setup views
 
 -(void) setupViews
@@ -68,7 +98,7 @@
     // Setup phone Name Label
     UILabel * phoneNameLabel = [[UILabel alloc]init];
     phoneNameLabel.textColor = [UIColor whiteColor];
-    phoneNameLabel.text = @"skjdfgsfsjfksfsjfskjdfsd";
+    phoneNameLabel.text = self.phone.code;
     phoneNameLabel.font = [UIFont systemFontOfSize:30 weight:UIFontWeightBold];
     phoneNameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [superView addSubview:phoneNameLabel];
@@ -81,22 +111,37 @@
     // Setup address Label
     UILabel *addressLabel = [[UILabel alloc]init];
     addressLabel.textColor = [UIColor whiteColor];
+    addressLabel.numberOfLines = 0;
+    addressLabel.textAlignment = NSTextAlignmentCenter;
+    addressLabel.text = self.phone.address;
     addressLabel.font = [UIFont systemFontOfSize:22 weight:UIFontWeightMedium];
     addressLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [addressLabel adjustsFontSizeToFitWidth];
     [superView addSubview:addressLabel];
     
     // Setup missing Label
     self.foundLabel = [[UILabel alloc]init];
     self.foundLabel.font = [UIFont systemFontOfSize:22 weight:UIFontWeightMedium];
     self.foundLabel.textColor = [UIColor whiteColor];
-    self.foundLabel.text = @"sljdhfsdhfsfsljfhsljfh";
     self.foundLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [superView addSubview:self.foundLabel];
     
     // Setup switch
     self.foundSwitch = [[UISwitch alloc]init];
+    self.foundSwitch.on = self.phone.found;
+    [self.foundSwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
     self.foundSwitch.translatesAutoresizingMaskIntoConstraints = NO;
+    if([self.phone.found  isEqual: @0])
+    {
+        self.foundLabel.text = @"Missing";
+        self.foundSwitch.on = NO;
+    }else
+    {
+        self.foundLabel.text = @"Found";
+        self.foundSwitch.on = YES;
+    }
     [superView addSubview:self.foundSwitch];
+    
     
     //----------------------------------------------------
     //                     Constraints
@@ -131,23 +176,23 @@
     [NSLayoutConstraint constraintWithItem:phoneNameLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeTop multiplier:1.0 constant:40],
     
     //Phone image constraints
-    [NSLayoutConstraint constraintWithItem:phoneImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:phoneNameLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:30],
+    [NSLayoutConstraint constraintWithItem:phoneImageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:phoneNameLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:15],
     [NSLayoutConstraint constraintWithItem:phoneImageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
     
     // Address Label
-    [NSLayoutConstraint constraintWithItem:addressLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
+    [NSLayoutConstraint constraintWithItem:addressLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:5],
+    [NSLayoutConstraint constraintWithItem:addressLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5],
     [NSLayoutConstraint constraintWithItem:addressLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:phoneImageView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:30],
     
     // Missing label
     [NSLayoutConstraint constraintWithItem:self.foundLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
     [NSLayoutConstraint constraintWithItem:self.foundLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:addressLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:30],
     
-    
+    [NSLayoutConstraint constraintWithItem:self.foundSwitch attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
+    [NSLayoutConstraint constraintWithItem:self.foundSwitch attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.foundLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:30],
+    [NSLayoutConstraint constraintWithItem:self.foundSwitch attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-30],
 
     ]];
-    
-    
-    
 }
 
 @end
