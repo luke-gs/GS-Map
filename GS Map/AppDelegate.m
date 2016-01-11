@@ -42,6 +42,7 @@
     
     self.window.rootViewController = navigationController;
     
+    // Set up the core data stack with magical record
     [MagicalRecord setupCoreDataStack];
     
     return YES;

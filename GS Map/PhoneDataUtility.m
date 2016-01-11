@@ -11,6 +11,7 @@
 
 @implementation PhoneDataUtility
 
+// Saves the given phone to core data
 +(void) savePhoneToCoreData:(Phone*) phone withCompletionHandler: (void (^)(Phone* phone)) completion
 {
    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
@@ -22,7 +23,6 @@
            NSLog(@"context did save");
            completion(phone);
        }
-       
    }];
 }
 
@@ -47,6 +47,7 @@
     }];
 }
 
+// This will update the core data when a user changes the phones found value to yes
 +(void) updatePhoneWhenFound:(Phone*) phone forFoundBool:(BOOL) found withCompletion:(void (^)()) completion
 {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
@@ -65,6 +66,9 @@
     }];
 }
 
+#pragma mark - Helper Method
+
+// Helper method that converts a PFObject to a phone object
 +(Phone*) phoneFromPFObject:(PFObject*)phoneObject fromPhone:(Phone*) phone
 {
     if([phoneObject objectId])
@@ -72,6 +76,7 @@
         phone.code = [phoneObject objectId];
     }
     
+    // Set the information
     phone.address = phoneObject[@"address"];
     phone.longitude = phoneObject[@"longitude"];
     phone.latitude = phoneObject[@"latitude"];
@@ -80,5 +85,31 @@
     return phone;
 }
 
+// Removes a phone from core data given the PFobject ID
+// Uses the plain removePhoneFromCoreData method after retrieving a phone from an ID
++(void) removePhoneFromCoreDataWithID:(NSString*) phoneID withCompletion:(void (^)()) completion
+{
+    Phone *phoneToDelete = [Phone MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"code == %@", phoneID]];
+    [self removePhoneFromCoreData:phoneToDelete withCompletion:completion];
+}
+
+// Removes a phone from core Data given a certain phone
++(void) removePhoneFromCoreData:(Phone *) phone withCompletion:(void(^)()) completion
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        Phone *phoneToDelete = [phone MR_inContext:localContext];
+        [phoneToDelete MR_deleteEntityInContext:localContext];
+    } completion:^(BOOL contextDidSave, NSError *error) {
+        if(contextDidSave)
+        {
+            if(completion)
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion();
+                });
+            }
+        }
+    }];
+}
 
 @end

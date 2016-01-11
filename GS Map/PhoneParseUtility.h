@@ -15,8 +15,8 @@
 
 +(void) savePhoneInParse:(PFObject*) phoneObject withCompletion:(void (^)(PFObject *phoneObject)) completion;
 
-+(Phone*) phoneFromPFObject:(PFObject*)phoneObject fromPhone:(Phone*) phone;
-
 +(void) updatePhoneForFound:(Phone*) phone withFound:(BOOL) found withCompletion:(void (^)()) completion;
+
++(void) removePhoneFromParseData:(Phone*) phone withCompletion:(void(^)()) completion;
 
 @end

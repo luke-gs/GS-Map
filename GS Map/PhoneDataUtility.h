@@ -18,4 +18,8 @@
 
 +(void) updatePhoneWhenFound:(Phone*) phone forFoundBool:(BOOL) found withCompletion:(void (^)()) completion;
 
++(void) removePhoneFromCoreDataWithID:(NSString*) phoneID withCompletion:(void (^)()) completion;
+
++(void) removePhoneFromCoreData:(Phone *) phone withCompletion:(void(^)()) completion;
+
 @end

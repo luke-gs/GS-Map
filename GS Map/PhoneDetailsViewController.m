@@ -34,11 +34,8 @@
     [self.mapView removeFromSuperview];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+// Custom init that will provide the overlay effect with the map view from
+// the previous VC
 -(instancetype)initWithMapView:(MKMapView*)mapView
 {
     self = [super init];
@@ -51,6 +48,7 @@
 
 #pragma mark - Helper Methods
 
+// Method that is called when the switch is selected and changed by the user
 -(IBAction)switchChanged:(id)sender
 {
     UISwitch *switchButton = (UISwitch*) sender;
@@ -69,6 +67,7 @@
         self.foundLabel.text = @"Found";
     }
     
+    // Calls both the parse and the core data variants of the update methods to update data
     __weak PhoneDetailsViewController *weakSelf = self;
     [PhoneParseUtility updatePhoneForFound:self.phone withFound:found withCompletion:^{
         [PhoneDataUtility updatePhoneWhenFound:weakSelf.phone forFoundBool:found withCompletion:^{
@@ -89,9 +88,11 @@
     UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark ];
     UIVisualEffectView *overlayEffect = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
     
+    // The overlay effect
     overlayEffect.backgroundColor = [UIColor clearColor];
     overlayEffect.translatesAutoresizingMaskIntoConstraints = NO;
     
+    // Add the views to the superview
     [superView addSubview:self.mapView];
     [superView addSubview:overlayEffect];
     
@@ -129,14 +130,14 @@
     // Setup switch
     self.foundSwitch = [[UISwitch alloc]init];
     self.foundSwitch.on = self.phone.found;
-    [self.foundSwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
     self.foundSwitch.translatesAutoresizingMaskIntoConstraints = NO;
-    if([self.phone.found  isEqual: @0])
-    {
+    [self.foundSwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    // Depending on whether the switch is on or off change the label
+    if([self.phone.found  isEqual: @0]) {
         self.foundLabel.text = @"Missing";
         self.foundSwitch.on = NO;
-    }else
-    {
+    }else{
         self.foundLabel.text = @"Found";
         self.foundSwitch.on = YES;
     }
@@ -150,18 +151,8 @@
     
                                               
     // Map view constraints
-    [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeTop
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:superView
-                                 attribute:NSLayoutAttributeTop
-                                multiplier:1.0
-                                  constant:0],
-    [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeLeft
-                                 relatedBy:NSLayoutRelationEqual
-                                    toItem:superView
-                                 attribute:NSLayoutAttributeTop
-                                multiplier:1.0
-                                  constant:0],
+    [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+    [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem: superView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
     [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0],
     [NSLayoutConstraint constraintWithItem:self.mapView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0],
     
@@ -188,10 +179,10 @@
     [NSLayoutConstraint constraintWithItem:self.foundLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
     [NSLayoutConstraint constraintWithItem:self.foundLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:addressLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:30],
     
+    // Switch constraints
     [NSLayoutConstraint constraintWithItem:self.foundSwitch attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
     [NSLayoutConstraint constraintWithItem:self.foundSwitch attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.foundLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:30],
     [NSLayoutConstraint constraintWithItem:self.foundSwitch attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:superView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-30],
-
     ]];
 }
 
