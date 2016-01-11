@@ -362,11 +362,13 @@ static CGFloat const TableViewMaxHeight = 200;
     Phone *phone = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     phoneDetailsVC.phone = phone;
-
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setHighlighted:NO animated:YES];
+    
+    // Unhighlight the cell
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     [self.navigationController pushViewController:phoneDetailsVC animated:YES];
+    
+    
 }
 
 // Handles the deletion of phones from the mapview, Core Data and Parse databases

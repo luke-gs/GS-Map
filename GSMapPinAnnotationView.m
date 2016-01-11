@@ -17,6 +17,7 @@
 
 @implementation GSMapPinAnnotationView
 
+// Passes in the annotation and reUse identifier
 -(instancetype)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
@@ -71,6 +72,7 @@
     return hitView;
 }
 
+// If the point is inside when the user clicks onto the button
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event
 {
     CGRect rect = self.bounds;

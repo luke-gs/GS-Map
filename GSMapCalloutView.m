@@ -10,16 +10,10 @@
 
 @implementation GSMapCalloutView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
+// Init the callout with a title and a subtitle
 -(instancetype)initWithTitle:(NSString*) title subtitle:(NSString*) subtitle
 {
+    // Create a visual effect view that is applied to the callout
     UIVisualEffect *visualEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     
     self = [super initWithEffect:visualEffect];
@@ -66,24 +60,24 @@
     //----------------------------------------------------
     [NSLayoutConstraint activateConstraints:@[
     
-    // Title label constraints
-    [NSLayoutConstraint constraintWithItem:titleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:5],
-    [NSLayoutConstraint constraintWithItem:titleLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:10],
+        // Title label constraints
+        [NSLayoutConstraint constraintWithItem:titleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:5],
+        [NSLayoutConstraint constraintWithItem:titleLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:10],
 
-    
-    // Subtitle constraints
-    [NSLayoutConstraint constraintWithItem:subtitleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:titleLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5],
-    [NSLayoutConstraint constraintWithItem:subtitleLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:titleLabel attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
-    
-    // Detail button constraints
-    [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:subtitleLabel attribute:NSLayoutAttributeRight multiplier:1.0 constant:5],
-    [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0],
-    [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:20],
-    [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:20],
 
-    // Callout View Constraints
-    [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:detailButton attribute:NSLayoutAttributeRight multiplier:1.0 constant:10],
-    [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:subtitleLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5],
+        // Subtitle constraints
+        [NSLayoutConstraint constraintWithItem:subtitleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:titleLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5],
+        [NSLayoutConstraint constraintWithItem:subtitleLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:titleLabel attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0],
+
+        // Detail button constraints
+        [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:subtitleLabel attribute:NSLayoutAttributeRight multiplier:1.0 constant:5],
+        [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0],
+        [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:20],
+        [NSLayoutConstraint constraintWithItem:detailButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:20],
+
+        // Callout View Constraints
+        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:detailButton attribute:NSLayoutAttributeRight multiplier:1.0 constant:10],
+        [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:subtitleLabel attribute:NSLayoutAttributeBottom multiplier:1.0 constant:5],
     ]];
     
 }
